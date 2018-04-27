@@ -6,6 +6,7 @@ It includes:
 * webpack4
 * babel + TypeScript
 * CSS Modules (incl. TypeScript support)
+* HMR (via [react-hot-loader](https://github.com/gaearon/react-hot-loader))
 * manifest.json (via [webpack-pwa-manifest](https://github.com/arthurbergmz/webpack-pwa-manifest))
 * ServiceWorker (via [offline-plugin](https://github.com/NekR/offline-plugin))
 * critical css (via [html-critical-webpack-plugin](https://github.com/anthonygore/html-critical-webpack-plugin))
