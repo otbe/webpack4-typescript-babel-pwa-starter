@@ -1,6 +1,16 @@
 # Webpack4 + Typescript + Babel + CSS Modules + PWA Starter
 
-A simple (hopefully) state of the art starter.  
+A simple (hopefully) state of the art starter.
+It includes:
+
+* webpack4
+* babel + TypeScript
+* CSS Modules (incl. TypeScript support)
+* manifest.json (via [webpack-pwa-manifest](https://github.com/arthurbergmz/webpack-pwa-manifest))
+* ServiceWorker (via [offline-plugin](https://github.com/NekR/offline-plugin))
+* critical css (via [html-critical-webpack-plugin](https://github.com/anthonygore/html-critical-webpack-plugin))
+* prerendering of routes (via [prerender-spa-plugin](https://github.com/chrisvfritz/prerender-spa-plugin)) see [package.json](./package.json)
+
 Lighthouse score 99 (perf)
 
 ## How to run
