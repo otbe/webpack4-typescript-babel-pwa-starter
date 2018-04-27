@@ -8,13 +8,17 @@
     "build": "tsc --noEmit && yarn webpack --config webpack.prod",
     "lint": "tslint -p . '{src,tests}/**/*.{tsx,ts}'",
     "lint:fix": "tslint -p . --fix '{src,tests}/**/*.{tsx,ts}'",
-    "prettier":
-      "prettier --single-quote --write --parser typescript '{src,tests}/**/*.{tsx,ts,gql}'"
+    "prettier": "prettier --single-quote --write --parser typescript '{src,tests}/**/*.{tsx,ts,gql}'"
   },
   "webpack": {
-    "browsers": [">2%"],
+    "browsers": [
+      ">2%"
+    ],
     "prerender": {
-      "routes": ["/", "/bar"]
+      "routes": [
+        "/",
+        "/bar"
+      ]
     }
   },
   "devDependencies": {
@@ -43,7 +47,8 @@
     "webpack": "^4.6.0",
     "webpack-cli": "^2.0.15",
     "webpack-dev-server": "^3.1.3",
-    "webpack-pwa-manifest": "^3.6.2"
+    "webpack-pwa-manifest": "^3.6.2",
+    "webpackbar": "^2.6.1"
   },
   "resolutions": {
     "babel-core": "^7.0.0-bridge.0",

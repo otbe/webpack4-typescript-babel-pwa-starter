@@ -4,6 +4,7 @@ const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
+const WebpackBar = require('webpackbar');
 
 module.exports = {
   entry: './src/index.tsx',
@@ -78,7 +79,8 @@ module.exports = {
       template: 'src/index.html'
     }),
     new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new WebpackBar()
   ],
 
   mode: 'development',

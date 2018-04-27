@@ -11,6 +11,7 @@ const WebpackPwaManifest = require('webpack-pwa-manifest');
 const PrerenderSPAPlugin = require('prerender-spa-plugin');
 const OfflinePlugin = require('offline-plugin');
 const autoprefixer = require('autoprefixer');
+const WebpackBar = require('webpackbar');
 
 module.exports = {
   entry: './src/index.tsx',
@@ -123,7 +124,8 @@ module.exports = {
       ServiceWorker: {
         events: true
       }
-    })
+    }),
+    new WebpackBar()
   ],
 
   mode: 'production',
