@@ -1,4 +1,4 @@
-# Webpack4 + Typescript + Babel + CSS Modukes + PWA Starter
+# Webpack4 + Typescript + Babel + CSS Modules + PWA Starter
 
 A simple (hopefully) state of the art starter.  
 Lighthouse score 99 (perf)
