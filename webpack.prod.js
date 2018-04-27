@@ -56,8 +56,14 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader,
           {
-            loader: 'css-loader',
-            options: { importLoaders: 1, souceMap: true }
+            loader: 'typings-for-css-modules-loader',
+            options: {
+              modules: true,
+              importLoaders: 1,
+              souceMap: true,
+              namedExport: true,
+              camelCase: true
+            }
           },
           {
             loader: 'postcss-loader',

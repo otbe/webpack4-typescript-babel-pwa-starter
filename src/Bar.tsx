@@ -1,5 +1,5 @@
 import React from 'react';
-import './bar.css';
+import { bar } from './bar.css';
 
 const test = async () => {
   return 41;
@@ -7,4 +7,4 @@ const test = async () => {
 
 test().then(x => console.log('async stuff', x));
 
-export default () => <div className="bar">bar</div>;
+export default () => <div className={bar}>bar</div>;

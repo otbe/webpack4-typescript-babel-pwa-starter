@@ -1,4 +1,4 @@
 import React from 'react';
-import './nav.css';
+import { foo } from './nav.css';
 
-export const Nav = () => <div className="foo">Hello World</div>;
+export const Nav = () => <div className={foo}>Hello World</div>;
