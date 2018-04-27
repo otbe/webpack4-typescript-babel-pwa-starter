@@ -5,10 +5,11 @@
   "license": "MIT",
   "scripts": {
     "watch": "yarn webpack-dev-server",
-    "build": "yarn webpack --config webpack.prod",
+    "build": "tsc --noEmit && yarn webpack --config webpack.prod",
     "lint": "tslint -p . '{src,tests}/**/*.{tsx,ts}'",
     "lint:fix": "tslint -p . --fix '{src,tests}/**/*.{tsx,ts}'",
-    "prettier": "prettier --single-quote --write --parser typescript '{src,tests}/**/*.{tsx,ts,gql}'"
+    "prettier":
+      "prettier --single-quote --write --parser typescript '{src,tests}/**/*.{tsx,ts,gql}'"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.46",
@@ -39,7 +40,8 @@
     "webpack-pwa-manifest": "^3.6.2"
   },
   "resolutions": {
-    "babel-core": "^7.0.0-bridge.0"
+    "babel-core": "^7.0.0-bridge.0",
+    "@types/node": "^9.6.7"
   },
   "dependencies": {
     "@types/react": "^16.3.12",
