@@ -39,7 +39,7 @@ module.exports = {
               '@babel/preset-env',
               {
                 targets: {
-                  browsers: ['>2%']
+                  browsers: require('./package.json').webpack.browsers
                 },
                 useBuiltIns: 'usage'
               }
@@ -63,7 +63,7 @@ module.exports = {
             options: {
               plugins: [
                 autoprefixer({
-                  browsers: ['>2%']
+                  browsers: require('./package.json').webpack.browsers
                 })
               ]
             }
@@ -115,7 +115,7 @@ module.exports = {
     }),
     new PrerenderSPAPlugin({
       staticDir: path.join(__dirname, 'dist'),
-      routes: ['/']
+      routes: require('./package.json').webpack.prerender.routes
     }),
     new OfflinePlugin({
       appShell: '/',

@@ -11,6 +11,12 @@
     "prettier":
       "prettier --single-quote --write --parser typescript '{src,tests}/**/*.{tsx,ts,gql}'"
   },
+  "webpack": {
+    "browsers": [">2%"],
+    "prerender": {
+      "routes": ["/", "/bar"]
+    }
+  },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.46",
     "@babel/preset-env": "^7.0.0-beta.46",

@@ -32,7 +32,7 @@ module.exports = {
               '@babel/preset-env',
               {
                 targets: {
-                  browsers: ['>2%']
+                  browsers: require('./package.json').webpack.browsers
                 },
                 useBuiltIns: 'usage'
               }
@@ -62,7 +62,7 @@ module.exports = {
             options: {
               plugins: [
                 autoprefixer({
-                  browsers: ['>2%']
+                  browsers: require('./package.json').webpack.browsers
                 })
               ]
             }
