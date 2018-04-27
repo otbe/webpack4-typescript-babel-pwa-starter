@@ -5,7 +5,13 @@
     "module": "esnext",
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
-    "sourceMap": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitUseStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
     "jsx": "react"
   },
   "exclude": ["node_modules"]
