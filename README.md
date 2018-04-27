@@ -12,7 +12,7 @@ Production build:
 `$ yarn build`
 
 Use [serve](https://www.npmjs.com/package/serve) to serve your build:  
-`$ serve -c 0 -s -p 8080`
+`$ serve -c 0 -s -p 8080 dist/`
 
 ## Want to improve?
 
