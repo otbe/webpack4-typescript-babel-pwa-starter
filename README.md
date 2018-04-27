@@ -1,4 +1,4 @@
-# Webpack4 + Typescript + Babel + CSS Modules + PWA Starter
+# Webpack4 + Typescript + Babel + CSS Modules + HMR + PWA Starter
 
 A simple (hopefully) state of the art starter.
 It includes:
