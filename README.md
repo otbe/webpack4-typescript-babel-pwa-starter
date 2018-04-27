@@ -11,7 +11,7 @@ Lighthouse score 99 (perf)
 Production build:  
 `$ yarn build`
 
-Use `serve` to serve your build:  
+Use [serve](https://www.npmjs.com/package/serve) to serve your build:  
 `$ serve -c 0 -s -p 8080`
 
 ## Want to improve?
