@@ -91,19 +91,23 @@ module.exports = {
     }),
     new OptimizeCSSAssetsPlugin({}),
     new UglifyJSPlugin(),
-    new HtmlCriticalPlugin({
-      base: path.resolve(__dirname, 'dist'),
-      src: 'index.html',
-      dest: 'index.html',
-      inline: true,
-      minify: true,
-      // extract: true, // TODO Investigate why this breaks SW
-      width: 1920,
-      height: 1080,
-      penthouse: {
-        blockJSRequests: false
-      }
+    new PrerenderSPAPlugin({
+      staticDir: path.join(__dirname, 'dist'),
+      routes: require('./package.json').webpack.prerender.routes
     }),
+    ...require('./package.json').webpack.prerender.routes.map(
+      route =>
+        new HtmlCriticalPlugin({
+          base: path.resolve(__dirname, 'dist'),
+          src: path.join(route.slice(1), 'index.html'),
+          dest: path.join(route.slice(1), 'index.html'),
+          inline: true,
+          minify: true,
+          // extract: true, // TODO investigate why this breaks SW
+          width: 1920,
+          height: 1080
+        })
+    ),
     new WebpackPwaManifest({
       name: 'My Progressive Web App',
       short_name: 'MyPWA',
@@ -119,10 +123,6 @@ module.exports = {
         //   size: '1024x1024' // you can also use the specifications pattern
         // }
       ]
-    }),
-    new PrerenderSPAPlugin({
-      staticDir: path.join(__dirname, 'dist'),
-      routes: require('./package.json').webpack.prerender.routes
     }),
     new OfflinePlugin({
       appShell: '/',
