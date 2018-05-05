@@ -8,25 +8,16 @@
     "build": "tsc --noEmit && yarn webpack --config webpack.prod",
     "lint": "tslint -p . '{src,tests}/**/*.{tsx,ts}'",
     "lint:fix": "tslint -p . --fix '{src,tests}/**/*.{tsx,ts}'",
-    "prettier": "prettier --single-quote --write --parser typescript '{src,tests}/**/*.{tsx,ts,gql}'"
+    "prettier":
+      "prettier --single-quote --write --parser typescript '{src,tests}/**/*.{tsx,ts,gql}'"
   },
   "webpack": {
-    "imageSrcSets": {
-      "sizes": [
-        300,
-        600,
-        1200,
-        2000
-      ]
+    "images": {
+      "sizes": [300, 600, 1200, 2000]
     },
-    "browsers": [
-      ">2%"
-    ],
+    "browsers": [">2%"],
     "prerender": {
-      "routes": [
-        "/",
-        "/bar"
-      ]
+      "routes": ["/", "/bar"]
     }
   },
   "devDependencies": {

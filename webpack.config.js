@@ -89,7 +89,7 @@ module.exports = {
         options: {
           adapter: require('responsive-loader/sharp'),
           placeholder: true,
-          sizes: require('./package.json').webpack.imageSrcSets.sizes
+          ...require('./package.json').webpack.images
         }
       }
     ]
