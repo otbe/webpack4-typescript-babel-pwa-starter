@@ -85,7 +85,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.html'
     }),
-
     new MiniCssExtractPlugin({
       filename: '[name].[hash].css'
     }),
@@ -103,7 +102,6 @@ module.exports = {
           dest: path.join(route.slice(1), 'index.html'),
           inline: true,
           minify: true,
-          // extract: true, // TODO investigate why this breaks SW
           width: 1920,
           height: 1080
         })
@@ -127,6 +125,7 @@ module.exports = {
     new OfflinePlugin({
       appShell: '/',
       autoUpdate: true, // one hour
+      externals: [...require('./package.json').webpack.prerender.routes],
       ServiceWorker: {
         events: true
       }
