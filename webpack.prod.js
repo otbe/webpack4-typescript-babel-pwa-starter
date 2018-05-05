@@ -29,10 +29,27 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.js$/,
+        include: /node_modules/,
+        loader: 'babel-loader',
+        options: {
+          presets: [
+            [
+              '@babel/preset-env',
+              {
+                targets: {
+                  browsers: require('./package.json').webpack.browsers
+                }
+              }
+            ],
+            '@babel/preset-react'
+          ]
+        }
+      },
+      {
         test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-
         options: {
           plugins: ['react-loadable/babel'],
           presets: [
@@ -77,6 +94,13 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000
+        }
       }
     ]
   },
@@ -85,7 +109,8 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new webpack.optimize.ModuleConcatenationPlugin(),
     new HtmlWebpackPlugin({
-      template: 'src/index.html'
+      template: 'src/index.html',
+      title: require('./package.json').name
     }),
     new MiniCssExtractPlugin({
       filename: '[name].[hash].css'
