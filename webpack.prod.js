@@ -29,24 +29,6 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
-        include: /node_modules/,
-        loader: 'babel-loader',
-        options: {
-          presets: [
-            [
-              '@babel/preset-env',
-              {
-                targets: {
-                  browsers: require('./package.json').webpack.browsers
-                }
-              }
-            ],
-            '@babel/preset-react'
-          ]
-        }
-      },
-      {
         test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
