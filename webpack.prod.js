@@ -42,7 +42,8 @@ module.exports = {
                 targets: {
                   browsers: require('./package.json').webpack.browsers
                 },
-                useBuiltIns: 'usage'
+                useBuiltIns: 'usage',
+                modules: false
               }
             ],
             '@babel/preset-react',
@@ -82,6 +83,7 @@ module.exports = {
 
   plugins: [
     new CleanWebpackPlugin(['dist']),
+    new webpack.optimize.ModuleConcatenationPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/index.html'
     }),
