@@ -12,6 +12,7 @@ const PrerenderSPAPlugin = require('prerender-spa-plugin');
 const OfflinePlugin = require('offline-plugin');
 const autoprefixer = require('autoprefixer');
 const WebpackBar = require('webpackbar');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
 module.exports = {
   entry: './src/index.tsx',
@@ -78,10 +79,19 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+        test: /\.(gif|svg|eot|ttf|woff|woff2)$/,
         loader: 'url-loader',
         options: {
           limit: 10000
+        }
+      },
+      {
+        test: /\.(jpe?g|png)$/i,
+        loader: 'responsive-loader',
+        options: {
+          adapter: require('responsive-loader/sharp'),
+          placeholder: true,
+          sizes: require('./package.json').webpack.imageSrcSets.sizes
         }
       }
     ]
@@ -99,6 +109,11 @@ module.exports = {
     }),
     new OptimizeCSSAssetsPlugin({}),
     new UglifyJSPlugin(),
+    new ImageminPlugin({
+      pngquant: {
+        quality: '85'
+      }
+    }),
     new PrerenderSPAPlugin({
       staticDir: path.join(__dirname, 'dist'),
       routes: require('./package.json').webpack.prerender.routes

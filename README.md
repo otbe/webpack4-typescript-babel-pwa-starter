@@ -11,6 +11,7 @@ It includes:
 * ServiceWorker (via [offline-plugin](https://github.com/NekR/offline-plugin))
 * critical css (via [html-critical-webpack-plugin](https://github.com/anthonygore/html-critical-webpack-plugin))
 * prerendering of routes (via [prerender-spa-plugin](https://github.com/chrisvfritz/prerender-spa-plugin)) see [package.json](./package.json)
+* image optimizing (via [responsive-loader](https://github.com/herrstucki/responsive-loader) and [imagemin-webpack-plugin](https://github.com/Klathmon/imagemin-webpack-plugin))
 
 Lighthouse score 99 (perf)
 
@@ -23,7 +24,7 @@ Production build:
 `$ yarn build`
 
 Use [serve](https://www.npmjs.com/package/serve) to serve your build:  
-`$ serve -c 0 -s -p 8080 dist/`
+`$ serve -c 0 -s -p 9000 dist/`
 
 ## Want to improve?
 

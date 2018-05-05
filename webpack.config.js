@@ -77,10 +77,19 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+        test: /\.(gif|svg|eot|ttf|woff|woff2)$/,
         loader: 'url-loader',
         options: {
           limit: 10000
+        }
+      },
+      {
+        test: /\.(jpe?g|png)$/i,
+        loader: 'responsive-loader',
+        options: {
+          adapter: require('responsive-loader/sharp'),
+          placeholder: true,
+          sizes: require('./package.json').webpack.imageSrcSets.sizes
         }
       }
     ]
